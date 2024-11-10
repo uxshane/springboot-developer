@@ -21,4 +21,9 @@ public class UserService {
                 .build()).getId();
     }
 
+    public User findById(Long id) {
+        return userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected user"));
+    }
+
 }
